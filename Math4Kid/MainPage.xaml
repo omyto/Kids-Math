@@ -1,0 +1,117 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Math4Kid.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Landscape" Orientation="Landscape">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+    	<Grid.Background>
+    		<ImageBrush ImageSource="/Resources/Background/MainPageBackground.png"/>
+    	</Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>-->
+        
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="0">
+        	<Grid x:Name="LeftMainPanel" Margin="48,0,0,0" VerticalAlignment="Bottom" Width="350" Height="320" HorizontalAlignment="Left">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+        		<Grid x:Name="LeftLeft" Grid.Column="0" VerticalAlignment="Bottom">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="btn_HocSo" Content="" Height="160" Width="160" Grid.Row="0" Click="btn_HocSo_Click" BorderThickness="0">
+                    	<Button.Background>
+                    		<ImageBrush ImageSource="/Resources/MainButton/HocSo.png"/>
+                    	</Button.Background>
+                    </Button>
+                    <Button x:Name="btn_GameSoSanh" Content="" Height="160" Width="160" Grid.Row="1" Click="btn_GameSoSanh_Click" BorderThickness="0">
+                    	<Button.Background>
+                    		<ImageBrush Stretch="Fill" ImageSource="/Resources/MainButton/SoSanh.png"/>
+                    	</Button.Background>
+                    </Button>
+        		</Grid>
+                <Grid x:Name="RightLeft" Grid.Column="1" VerticalAlignment="Bottom">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="btn_GameCongTru" Content="" Height="160" Width="160" Grid.Row="0" Click="btn_GameCongTru_Click" BorderThickness="0">
+                    	<Button.Background>
+                    		<ImageBrush Stretch="Fill" ImageSource="/Resources/MainButton/CongTru.png"/>
+                    	</Button.Background>
+                    </Button>
+                    <Button x:Name="btn_GameSameNumber" Content="" Height="160" Width="160" Grid.Row="1" Click="btn_GameSameNumber_Click" BorderThickness="0">
+                    	<Button.Background>
+                    		<ImageBrush Stretch="Fill" ImageSource="/Resources/MainButton/TimSo.png"/>
+                    	</Button.Background>
+                    </Button>
+        		</Grid>
+        	</Grid>
+
+            <Grid x:Name="RightMainPanel" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="350" Height="320" Margin="0,0,48,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid x:Name="LeftRight" Grid.Column="0" VerticalAlignment="Bottom">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="btn_DaySo" Content="" Height="160" Width="160" Grid.Row="0" Click="btn_DaySo_Click" BorderThickness="0">
+                    	<Button.Background>
+                    		<ImageBrush Stretch="Fill" ImageSource="/Resources/MainButton/DaySo.png"/>
+                    	</Button.Background>
+                    </Button>
+                    <Button x:Name="btn_TapDem" Content="" Height="160" Width="160" Grid.Row="1" Click="btn_TapDem_Click" BorderThickness="0">
+                    	<Button.Background>
+                    		<ImageBrush Stretch="Fill" ImageSource="/Resources/MainButton/TapDem.png"/>
+                    	</Button.Background>
+                    </Button>
+                </Grid>
+                <Grid x:Name="RightRight" Grid.Column="1" VerticalAlignment="Bottom">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="btn_DayTang" Content="" Height="160" Width="160" Grid.Row="0" Click="btn_DayTang_Click" BorderThickness="0">
+                    	<Button.Background>
+                    		<ImageBrush Stretch="Fill" ImageSource="/Resources/MainButton/DayTang.png"/>
+                    	</Button.Background>
+                    </Button>
+                    <Button x:Name="btn_DayGiam" Content="" Height="160" Width="160" Grid.Row="1" Click="btn_DayGiam_Click" BorderThickness="0">
+                    	<Button.Background>
+                    		<ImageBrush Stretch="Fill" ImageSource="/Resources/MainButton/DayGiam.png"/>
+                    	</Button.Background>
+                    </Button>
+                </Grid>
+            </Grid>
+            <Grid x:Name="TitlePanel" HorizontalAlignment="Center" Height="150" Margin="0,12,0,0" VerticalAlignment="Top" Width="600">
+            	<Grid.Background>
+            		<ImageBrush Stretch="Fill" ImageSource="/Resources/Background/Title_en.png"/>
+            	</Grid.Background>
+            </Grid>
+            <Image x:Name="InfoImageIcon" HorizontalAlignment="Right" Height="50" Margin="0,0,8,8" VerticalAlignment="Bottom" Width="50" Source="/Resources/Buttons/infoIcon.png" Tap="InfoImageIcon_Tap"/>
+            <Image x:Name="RatingImageIcon" HorizontalAlignment="Right" Height="50" Margin="0,0,8,66" VerticalAlignment="Bottom" Width="50" Source="/Resources/Buttons/star2.png" Tap="RatingImageIcon_Tap"/>
+        </Grid>
+    </Grid>
+ 
+</phone:PhoneApplicationPage>

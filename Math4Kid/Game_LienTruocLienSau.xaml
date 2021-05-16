@@ -1,0 +1,68 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Math4Kid.Game_LienTruocLienSau"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Landscape" Orientation="Landscape"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="0">
+        	<Grid x:Name="QuestionPanel" HorizontalAlignment="Center" Height="150" Margin="0,60,0,0" Width="730" VerticalAlignment="Top"/>
+        	<Grid x:Name="AnswerPanel" HorizontalAlignment="Right" Height="150" Margin="0,0,24,24" VerticalAlignment="Bottom" Width="600">
+        		<Grid.ColumnDefinitions>
+        			<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+                <Grid x:Name="viewBoxBtn1" Height="140" Margin="0" Width="140" Grid.Column="1">
+                    <Button x:Name="btnPA1" Content="" HorizontalAlignment="Left" Height="140" VerticalAlignment="Top" Width="140" Click="btnPA1_Click" BorderThickness="0">
+                        <Button.Background>
+                            <ImageBrush Stretch="Fill" ImageSource="/Resources/Number/0.png"/>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+                <Grid x:Name="viewBoxBtn2" Height="140" Margin="0" Width="140" Grid.Column="2">
+        			<Button x:Name="btnPA2" Content="" Width="140" Height="140" Click="btnPA2_Click" BorderThickness="0">
+        				<Button.Background>
+        					<ImageBrush Stretch="Fill" ImageSource="/Resources/Number/1.png"/>
+        				</Button.Background>
+        			</Button>
+                </Grid>
+                <Grid x:Name="viewBoxBtn3" Height="140" Margin="0" Width="140" Grid.Column="3">
+        			<Button x:Name="btnPA3" Content="" Width="140" Height="140" Click="btnPA3_Click" BorderThickness="0">
+        				<Button.Background>
+        					<ImageBrush Stretch="Fill" ImageSource="/Resources/Number/2.png"/>
+        				</Button.Background>
+        			</Button>
+                </Grid>
+                <Grid x:Name="viewBoxBtn4" Height="140" Margin="0" Width="140">
+        			<Button x:Name="btnPA4" Content="" Width="140" Height="140" Click="btnPA4_Click" BorderThickness="0">
+        				<Button.Background>
+        					<ImageBrush Stretch="Fill" ImageSource="/Resources/Number/3.png"/>
+        				</Button.Background>
+        			</Button>
+                </Grid>
+        	</Grid>
+            <MediaElement x:Name="soundEffect" Visibility="Collapsed" Volume="1"></MediaElement>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>
