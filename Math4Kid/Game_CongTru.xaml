@@ -1,0 +1,74 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Math4Kid.Game_CongTru"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Landscape" Orientation="Landscape"
+    mc:Ignorable="d">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+    	<Grid.Background>
+    		<ImageBrush Stretch="Fill" ImageSource="/Resources/Background/Background1.png"/>
+    	</Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="0">
+            <Grid x:Name="QuestionPanel" Height="100" Margin="0,24,0,0" VerticalAlignment="Top" Width="500" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+            	<Image x:Name="imageTH1" Height="100" Margin="0" Width="100" Source="/Resources/Number/0.png"/>
+            	<Image x:Name="imageTT" Height="100" Margin="0" Width="100" Source="/Resources/Number/0.png" Grid.Column="1"/>
+            	<Image x:Name="imageTH2" Height="100" Margin="0" Width="100" Source="/Resources/Number/0.png" Grid.Column="2"/>
+            	<Image x:Name="imageEQ" Height="100" Margin="0" Width="100" Source="/Resources/Number/0.png" Grid.Column="3"/>
+            	<Image x:Name="imageKQ" Height="100" Margin="0" Width="100" Source="/Resources/Number/0.png" Grid.Column="4"/>
+            </Grid>
+            <Grid x:Name="AnswerPanel" HorizontalAlignment="Center" Height="150" Margin="100,0" VerticalAlignment="Bottom" Width="600">
+            	<Grid.ColumnDefinitions>
+            		<ColumnDefinition Width="*"/>
+            		<ColumnDefinition Width="*"/>
+            		<ColumnDefinition Width="*"/>
+            	</Grid.ColumnDefinitions>
+            	<Button x:Name="btnPA1" Content="" Height="140" Margin="0" Width="140" Click="btnPA1_Click" BorderThickness="0">
+            		<Button.Background>
+            			<ImageBrush Stretch="Fill" ImageSource="/Resources/Number/0.png"/>
+            		</Button.Background>
+            	</Button>
+            	<Button x:Name="btnPA2" Content="" Height="140" Margin="0" Width="140" Click="btnPA2_Click" Grid.Column="1" BorderThickness="0">
+            		<Button.Background>
+            			<ImageBrush Stretch="Fill" ImageSource="/Resources/Number/0.png"/>
+            		</Button.Background>
+            	</Button>
+            	<Button x:Name="btnPA3" Content="" Height="140" Margin="0" Width="140" Click="btnPA3_Click" Grid.Column="2" BorderThickness="0">
+            		<Button.Background>
+            			<ImageBrush Stretch="Fill" ImageSource="/Resources/Number/0.png"/>
+            		</Button.Background>
+            	</Button>
+            </Grid>
+                <Grid x:Name="ItemsPanel" Height="200" Margin="0,0,0,24" Width="750">
+                	<Grid.Background>
+                		<ImageBrush Stretch="Fill" ImageSource="/Resources/Background/board.png"/>
+                	</Grid.Background>
+            </Grid>
+            <MediaElement x:Name="soundEffect" Visibility="Collapsed" Volume="1"></MediaElement>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>
