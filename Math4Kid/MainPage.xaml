@@ -34,12 +34,12 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Button x:Name="btn_HocSo" AutomationProperties.Name="Learn numbers" ToolTip="Learn numbers" Content="" Height="160" Width="160" Grid.Row="0" Click="btn_HocSo_Click" BorderThickness="0">
+                    <Button x:Name="btn_HocSo" AutomationProperties.Name="Learn numbers" ToolTip="Learn numbers" Content="" Height="150" Width="150" Margin="5" Grid.Row="0" Click="btn_HocSo_Click" BorderThickness="0">
                         <Button.Background>
                             <ImageBrush ImageSource="/Math4Kid;component/Resources/MainButton/HocSo.png"/>
                         </Button.Background>
                     </Button>
-                    <Button x:Name="btn_GameSoSanh" AutomationProperties.Name="Compare numbers" ToolTip="Compare numbers" Content="" Height="160" Width="160" Grid.Row="1" Click="btn_GameSoSanh_Click" BorderThickness="0">
+                    <Button x:Name="btn_GameSoSanh" AutomationProperties.Name="Compare numbers" ToolTip="Compare numbers" Content="" Height="150" Width="150" Margin="5" Grid.Row="1" Click="btn_GameSoSanh_Click" BorderThickness="0">
                         <Button.Background>
                             <ImageBrush Stretch="Fill" ImageSource="/Math4Kid;component/Resources/MainButton/SoSanh.png"/>
                         </Button.Background>
@@ -50,12 +50,12 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Button x:Name="btn_GameCongTru" AutomationProperties.Name="Addition and subtraction" ToolTip="Addition and subtraction" Content="" Height="160" Width="160" Grid.Row="0" Click="btn_GameCongTru_Click" BorderThickness="0">
+                    <Button x:Name="btn_GameCongTru" AutomationProperties.Name="Addition and subtraction" ToolTip="Addition and subtraction" Content="" Height="150" Width="150" Margin="5" Grid.Row="0" Click="btn_GameCongTru_Click" BorderThickness="0">
                         <Button.Background>
                             <ImageBrush Stretch="Fill" ImageSource="/Math4Kid;component/Resources/MainButton/CongTru.png"/>
                         </Button.Background>
                     </Button>
-                    <Button x:Name="btn_GameSameNumber" AutomationProperties.Name="Match pairs" ToolTip="Match pairs" Content="" Height="160" Width="160" Grid.Row="1" Click="btn_GameSameNumber_Click" BorderThickness="0">
+                    <Button x:Name="btn_GameSameNumber" AutomationProperties.Name="Match pairs" ToolTip="Match pairs" Content="" Height="150" Width="150" Margin="5" Grid.Row="1" Click="btn_GameSameNumber_Click" BorderThickness="0">
                         <Button.Background>
                             <ImageBrush Stretch="Fill" ImageSource="/Math4Kid;component/Resources/MainButton/TimSo.png"/>
                         </Button.Background>
@@ -73,12 +73,12 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Button x:Name="btn_DaySo" AutomationProperties.Name="Previous and next numbers" ToolTip="Previous and next numbers" Content="" Height="160" Width="160" Grid.Row="0" Click="btn_DaySo_Click" BorderThickness="0">
+                    <Button x:Name="btn_DaySo" AutomationProperties.Name="Previous and next numbers" ToolTip="Previous and next numbers" Content="" Height="150" Width="150" Margin="5" Grid.Row="0" Click="btn_DaySo_Click" BorderThickness="0">
                         <Button.Background>
                             <ImageBrush Stretch="Fill" ImageSource="/Math4Kid;component/Resources/MainButton/DaySo.png"/>
                         </Button.Background>
                     </Button>
-                    <Button x:Name="btn_TapDem" AutomationProperties.Name="Count objects" ToolTip="Count objects" Content="" Height="160" Width="160" Grid.Row="1" Click="btn_TapDem_Click" BorderThickness="0">
+                    <Button x:Name="btn_TapDem" AutomationProperties.Name="Count objects" ToolTip="Count objects" Content="" Height="150" Width="150" Margin="5" Grid.Row="1" Click="btn_TapDem_Click" BorderThickness="0">
                         <Button.Background>
                             <ImageBrush Stretch="Fill" ImageSource="/Math4Kid;component/Resources/MainButton/TapDem.png"/>
                         </Button.Background>
@@ -89,12 +89,12 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Button x:Name="btn_DayTang" AutomationProperties.Name="Ascending order" ToolTip="Ascending order" Content="" Height="160" Width="160" Grid.Row="0" Click="btn_DayTang_Click" BorderThickness="0">
+                    <Button x:Name="btn_DayTang" AutomationProperties.Name="Ascending order" ToolTip="Ascending order" Content="" Height="150" Width="150" Margin="5" Grid.Row="0" Click="btn_DayTang_Click" BorderThickness="0">
                         <Button.Background>
                             <ImageBrush Stretch="Fill" ImageSource="/Math4Kid;component/Resources/MainButton/DayTang.png"/>
                         </Button.Background>
                     </Button>
-                    <Button x:Name="btn_DayGiam" AutomationProperties.Name="Descending order" ToolTip="Descending order" Content="" Height="160" Width="160" Grid.Row="1" Click="btn_DayGiam_Click" BorderThickness="0">
+                    <Button x:Name="btn_DayGiam" AutomationProperties.Name="Descending order" ToolTip="Descending order" Content="" Height="150" Width="150" Margin="5" Grid.Row="1" Click="btn_DayGiam_Click" BorderThickness="0">
                         <Button.Background>
                             <ImageBrush Stretch="Fill" ImageSource="/Math4Kid;component/Resources/MainButton/DayGiam.png"/>
                         </Button.Background>
