@@ -1,18 +1,17 @@
-﻿using System;
+using System.Windows.Input;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace Math4Kid
 {
-    public partial class Game_SameNumber : PhoneApplicationPage
+    public partial class Game_SameNumber : Page
     {
         private Button oldButton1;
         private Button oldButton2;
@@ -70,11 +69,11 @@ namespace Math4Kid
             string strImageBackground = "/Resources/Background/Background" + rand.Next(1, 4) + ".png";
             //Change background
             ImageBrush imgBrush = new ImageBrush();
-            imgBrush.ImageSource = new BitmapImage(new Uri(strImageBackground, UriKind.Relative));
+            imgBrush.ImageSource = new BitmapImage(AssetPaths.Image(strImageBackground));
             LayoutRoot.Background = imgBrush;
             // Set img button
             imgBrush = new ImageBrush();
-            imgBrush.ImageSource = new BitmapImage(new Uri(strInvi, UriKind.Relative));
+            imgBrush.ImageSource = new BitmapImage(AssetPaths.Image(strInvi));
             SetButtonImage(imgBrush);
             InitBackgroundNumber();
         }
@@ -88,7 +87,7 @@ namespace Math4Kid
                 {
                     //curentButton.Content = "OPEN";
                     //ImageBrush ib = new ImageBrush();
-                    //ib.ImageSource = new BitmapImage(new Uri(strData[idButton], UriKind.Relative));
+                    //ib.ImageSource = new BitmapImage(AssetPaths.Image(strData[idButton]));
                     //curentButton.Background = ib;
                     oldButton2 = curentButton;
                     oldIdButton2 = idButton;
@@ -110,7 +109,7 @@ namespace Math4Kid
                     //oldButton1.Content = "CLOSED";
                     //oldButton2.Content = "CLOSED";
                     ib = new ImageBrush();
-                    ib.ImageSource = new BitmapImage(new Uri(strInvi, UriKind.Relative));
+                    ib.ImageSource = new BitmapImage(AssetPaths.Image(strInvi));
                     oldButton1.Background = ib;
                     oldButton2.Background = ib;
                     oldButton1 = null;
@@ -121,14 +120,14 @@ namespace Math4Kid
                 }
                 //curentButton.Content = "OPEN";
                 ib = new ImageBrush();
-                ib.ImageSource = new BitmapImage(new Uri(strData[idButton-1], UriKind.Relative));
+                ib.ImageSource = new BitmapImage(AssetPaths.Image(strData[idButton-1]));
                 curentButton.Background = ib;
 
                 if (isSame)
                 {
                     if (numSameFound != 6)
                     {
-                        soundEffect.Source = new Uri("/Assets/Sounds/Effects/ding.wav", UriKind.Relative);
+                        soundEffect.Source = AssetPaths.Sound("/Assets/Sounds/Effects/ding.wav");
                     }
                     //oldButton1.IsEnabled = false;
                     //oldButton2.IsEnabled = false;
@@ -138,14 +137,14 @@ namespace Math4Kid
                 }
                 else
                 {
-                    soundEffect.Source = new Uri("/Assets/Sounds/Effects/touch.mp3", UriKind.Relative);
+                    soundEffect.Source = AssetPaths.Sound("/Assets/Sounds/Effects/touch.mp3");
                 }
 
                 if (numSameFound == 6)
                 {
                     //MessageBox.Show("You Win");
                     //NavigationService.GoBack();
-                    NavigationService.Navigate(new Uri("/Game_CompleteState.xaml", UriKind.Relative));
+                    NavigationService.Navigate(new Uri("/Math4Kid;component/Game_CompleteState.xaml", UriKind.Relative));
                     InitGame();
                 }
             }
@@ -236,7 +235,7 @@ namespace Math4Kid
             } while (bgId == quesId);
             string str = "/Resources/ButtonBackground/bg" + bgId + ".png";
             ImageBrush imgBrush = new ImageBrush();
-            imgBrush.ImageSource = new BitmapImage(new Uri(str, UriKind.Relative));
+            imgBrush.ImageSource = new BitmapImage(AssetPaths.Image(str));
             grid1.Background = imgBrush;
             grid2.Background = imgBrush;
             grid3.Background = imgBrush;

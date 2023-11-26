@@ -1,0 +1,14 @@
+<Window x:Class="Math4Kid.MainWindow"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ Title="Kid's Math" Width="1000" Height="670" MinWidth="640" MinHeight="430" Background="#202020">
+ <DockPanel>
+  <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#303030">
+   <Button Content="Back (Alt+Left)" Margin="8" Padding="8" Foreground="White" Click="Back_Click" />
+   <Button Content="Home" Margin="8" Padding="8" Foreground="White" Click="Home_Click" />
+  </StackPanel>
+  <Viewbox Stretch="Uniform">
+   <Frame x:Name="GameFrame" Width="800" Height="480" NavigationUIVisibility="Hidden" Source="/Math4Kid;component/MainPage.xaml" />
+  </Viewbox>
+ </DockPanel>
+</Window>

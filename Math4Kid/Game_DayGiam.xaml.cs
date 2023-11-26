@@ -1,18 +1,17 @@
-﻿using System;
+using System.Windows.Input;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace Math4Kid
 {
-    public partial class Game_DayGiam : PhoneApplicationPage
+    public partial class Game_DayGiam : Page
     {
         private Random rand = null;
         private int[] table;
@@ -59,7 +58,7 @@ namespace Math4Kid
             }
             imgBrush = new ImageBrush();
             int bgbtnId = rand.Next(7);
-            imgBrush.ImageSource = new BitmapImage(new Uri("/Resources/ButtonBackground/bg" + bgbtnId + ".png", UriKind.Relative));
+            imgBrush.ImageSource = new BitmapImage(AssetPaths.Image("/Resources/ButtonBackground/bg" + bgbtnId + ".png"));
             for (int i = 0; i < table[0]; i++)
             {
                 for (int j = 0; j < table[1]; j++)
@@ -90,7 +89,7 @@ namespace Math4Kid
             sxTang();
             //Change Background
             imgBrush = new ImageBrush();
-            imgBrush.ImageSource = new BitmapImage(new Uri("/Resources/Background/Background" + rand.Next(1, 4) + ".png", UriKind.Relative));
+            imgBrush.ImageSource = new BitmapImage(AssetPaths.Image("/Resources/Background/Background" + rand.Next(1, 4) + ".png"));
             LayoutRoot.Background = imgBrush;
         }
         private bool checkHave(int[] arr, int vt)
@@ -128,17 +127,17 @@ namespace Math4Kid
             //int kt = Convert.ToInt32(btn.Content.ToString());
             if (kt == arrNum[leghtArrNum - 1])
             {
-                soundEffect.Source = new Uri("/Assets/Sounds/Effects/correct" + rand.Next(3) + ".mp3", UriKind.Relative);
+                soundEffect.Source = AssetPaths.Sound("/Assets/Sounds/Effects/correct" + rand.Next(3) + ".mp3");
                 btn.Visibility = Visibility.Collapsed;
                 leghtArrNum--;
             }
             else
             {
-                soundEffect.Source = new Uri("/Assets/Sounds/Effects/incorrect.mp3", UriKind.Relative);
+                soundEffect.Source = AssetPaths.Sound("/Assets/Sounds/Effects/incorrect.mp3");
             }
             if (leghtArrNum == 0)
             {
-                NavigationService.Navigate(new Uri("/Game_CompleteState.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri("/Math4Kid;component/Game_CompleteState.xaml", UriKind.Relative));
                 Update();
             }
         }
