@@ -17,7 +17,7 @@
             </Grid.RowDefinitions>
 
             <!--ContentPanel - place additional content here-->
-            <Grid x:Name="ContentPanel" Grid.Row="1" Margin="0" Height="460">
+            <Grid x:Name="ContentPanel" Grid.Row="1" Margin="60,0,0,0" Height="460">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
@@ -115,6 +115,7 @@
                 </Grid>
             </Grid>
         <MediaElement x:Name="soundEffect" Visibility="Collapsed" Volume="1"></MediaElement>
+        <Button x:Name="PageBackButton" Style="{StaticResource PageBackButtonStyle}" Command="NavigationCommands.BrowseBack" Grid.RowSpan="99" Panel.ZIndex="100" />
     </Grid>
 
 </Page>

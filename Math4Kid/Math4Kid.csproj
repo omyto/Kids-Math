@@ -3,12 +3,14 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>ApplicationIcon.ico</ApplicationIcon>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <RootNamespace>Math4Kid</RootNamespace>
     <AssemblyName>Math4Kid</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
     <Resource Include="Resources\**\*.png" />
+    <Resource Include="ApplicationIcon.ico" />
     <Content Include="Assets\Sounds\**\*.*" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>

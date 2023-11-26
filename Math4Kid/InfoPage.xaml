@@ -44,6 +44,7 @@
         <!--TitlePanel contains the name of the application and page title-->
 
         <!--ContentPanel - place additional content here-->
+        <Button x:Name="PageBackButton" Style="{StaticResource PageBackButtonStyle}" Command="NavigationCommands.BrowseBack" Grid.RowSpan="99" Panel.ZIndex="100" />
     </Grid>
 
 </Page>

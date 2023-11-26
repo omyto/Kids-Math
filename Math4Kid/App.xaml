@@ -18,5 +18,18 @@
     </Setter.Value>
    </Setter>
   </Style>
+  <Style x:Key="PageBackButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+   <Setter Property="Width" Value="44" />
+   <Setter Property="Height" Value="44" />
+   <Setter Property="Margin" Value="8" />
+   <Setter Property="HorizontalAlignment" Value="Left" />
+   <Setter Property="VerticalAlignment" Value="Top" />
+   <Setter Property="BorderThickness" Value="0" />
+   <Setter Property="ToolTip" Value="Back (Alt+Left)" />
+   <Setter Property="AutomationProperties.Name" Value="Back" />
+   <Setter Property="Background">
+    <Setter.Value><ImageBrush ImageSource="/Math4Kid;component/Resources/Buttons/GoBack.png" Stretch="Uniform" /></Setter.Value>
+   </Setter>
+  </Style>
  </Application.Resources>
 </Application>

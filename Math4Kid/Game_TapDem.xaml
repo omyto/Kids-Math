@@ -28,6 +28,7 @@
             <Grid x:Name="AnswerPanel" HorizontalAlignment="Center" Height="150" Margin="0,0,0,12" VerticalAlignment="Bottom" Width="726"/>
         </Grid>
         <MediaElement x:Name="soundEffect" Volume="1" Visibility="Collapsed"></MediaElement>
+        <Button x:Name="PageBackButton" Style="{StaticResource PageBackButtonStyle}" Command="NavigationCommands.BrowseBack" Grid.RowSpan="99" Panel.ZIndex="100" />
     </Grid>
 
 </Page>

@@ -66,6 +66,7 @@
             </Grid>
             <MediaElement x:Name="soundEffect" Visibility="Collapsed" Volume="1"></MediaElement>
         </Grid>
+        <Button x:Name="PageBackButton" Style="{StaticResource PageBackButtonStyle}" Command="NavigationCommands.BrowseBack" Grid.RowSpan="99" Panel.ZIndex="100" />
     </Grid>
 
 </Page>
