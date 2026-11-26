@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,12 +9,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Microsoft.Phone.Controls;
 using System.Windows.Media.Imaging;
 
 namespace Math4Kid
 {
-    public partial class Train_HocSo : PhoneApplicationPage
+    public partial class Train_HocSo : Page
     {
         private int numRow;
         private int numItemRow1;
@@ -65,20 +64,20 @@ namespace Math4Kid
         }
         private void PlayNumbeSound()
         {
-            numSound.Source = new Uri("/Assets/Sounds/English/en_" + num + ".mp3", UriKind.Relative);
+            numSound.Source = AssetPaths.Sound("/Assets/Sounds/English/en_" + num + ".mp3");
             //System.Threading.Thread.Sleep(200);
             //numSound.Play();
         }
         private void UpdateBackgron()
         {
             ImageBrush imgBrush = new ImageBrush();
-            imgBrush.ImageSource = new BitmapImage(new Uri("/Resources/Background/Background" + rand.Next(1,4) + ".png", UriKind.Relative));
+            imgBrush.ImageSource = new BitmapImage(AssetPaths.Image("/Resources/Background/Background" + rand.Next(1,4) + ".png"));
             LayoutRoot.Background = imgBrush;
         }
         private void UpdateNumPanel()
         {
-            imgNumber.Source = new BitmapImage(new Uri("/Resources/Number/" + num + ".png", UriKind.Relative));
-            imgBrush.ImageSource = new BitmapImage(new Uri("/Resources/ButtonBackground/bg" + rand.Next(7) + ".png", UriKind.Relative));
+            imgNumber.Source = new BitmapImage(AssetPaths.Image("/Resources/Number/" + num + ".png"));
+            imgBrush.ImageSource = new BitmapImage(AssetPaths.Image("/Resources/ButtonBackground/bg" + rand.Next(7) + ".png"));
             NumberPanel.Background = imgBrush;
         }
         private void UpdateRowPanel()
@@ -108,7 +107,7 @@ namespace Math4Kid
                 cd = new ColumnDefinition();
                 grid1.ColumnDefinitions.Add(cd);
                 img = new Image();
-                img.Source = new BitmapImage(new Uri(strImg, UriKind.Relative));
+                img.Source = new BitmapImage(AssetPaths.Image(strImg));
                 img.SetValue(Grid.ColumnProperty, i);
                 grid1.Children.Add(img);
             }
@@ -117,7 +116,7 @@ namespace Math4Kid
                 cd = new ColumnDefinition();
                 grid2.ColumnDefinitions.Add(cd);
                 img = new Image();
-                img.Source = new BitmapImage(new Uri(strImg, UriKind.Relative));
+                img.Source = new BitmapImage(AssetPaths.Image(strImg));
                 img.SetValue(Grid.ColumnProperty, i);
                 grid2.Children.Add(img);
             }
@@ -126,7 +125,7 @@ namespace Math4Kid
                 cd = new ColumnDefinition();
                 grid3.ColumnDefinitions.Add(cd);
                 img = new Image();
-                img.Source = new BitmapImage(new Uri(strImg, UriKind.Relative));
+                img.Source = new BitmapImage(AssetPaths.Image(strImg));
                 img.SetValue(Grid.ColumnProperty, i);
                 grid3.Children.Add(img);
             }
@@ -168,7 +167,7 @@ namespace Math4Kid
             ItemsPanel.Children.Clear();
         }
 
-        private void NextImage_Tap(object sender, GestureEventArgs e)
+        private void NextImage_Tap(object sender, MouseButtonEventArgs e)
         {
             if (num == 20)
             {
@@ -181,7 +180,7 @@ namespace Math4Kid
             Update();
         }
 
-        private void BackImage_Tap(object sender, GestureEventArgs e)
+        private void BackImage_Tap(object sender, MouseButtonEventArgs e)
         {
             if (num == 1)
             {

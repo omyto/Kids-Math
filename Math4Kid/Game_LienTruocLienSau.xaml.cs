@@ -1,18 +1,17 @@
-﻿using System;
+using System.Windows.Input;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
 using System.Windows.Media.Imaging;
 using System.Windows.Media;
 
 namespace Math4Kid
 {
-    public partial class Game_LienTruocLienSau : PhoneApplicationPage
+    public partial class Game_LienTruocLienSau : Page
     {
         private Image img;
         private Grid grid;
@@ -94,13 +93,13 @@ namespace Math4Kid
             // Ve cau hoi
             ColumnDefinition cd;
             ImageBrush imgBrush = new ImageBrush();
-            imgBrush.ImageSource = new BitmapImage(new Uri(strViewBoxQuestion, UriKind.Relative));
+            imgBrush.ImageSource = new BitmapImage(AssetPaths.Image(strViewBoxQuestion));
             for (int i = 0; i < nQues; i++)
             {
                 cd = new ColumnDefinition();
                 QuestionPanel.ColumnDefinitions.Add(cd);
                 img = new Image();
-                img.Source = new BitmapImage(new Uri(strImgQues[i], UriKind.Relative));
+                img.Source = new BitmapImage(AssetPaths.Image(strImgQues[i]));
                 img.Height = 140; img.Width = 140;
                 grid = new Grid();
                 grid.Background = imgBrush;
@@ -115,23 +114,23 @@ namespace Math4Kid
             // Ve cau tra loi
             int idStrAnsw = 0;
             imgBrush = new ImageBrush();
-            imgBrush.ImageSource = new BitmapImage(new Uri(strImgAnsw[idStrAnsw++], UriKind.Relative));
+            imgBrush.ImageSource = new BitmapImage(AssetPaths.Image(strImgAnsw[idStrAnsw++]));
             btnPA1.Background = imgBrush;
 
             imgBrush = new ImageBrush();
-            imgBrush.ImageSource = new BitmapImage(new Uri(strImgAnsw[idStrAnsw++], UriKind.Relative));
+            imgBrush.ImageSource = new BitmapImage(AssetPaths.Image(strImgAnsw[idStrAnsw++]));
             btnPA2.Background = imgBrush;
 
             imgBrush = new ImageBrush();
-            imgBrush.ImageSource = new BitmapImage(new Uri(strImgAnsw[idStrAnsw++], UriKind.Relative));
+            imgBrush.ImageSource = new BitmapImage(AssetPaths.Image(strImgAnsw[idStrAnsw++]));
             btnPA3.Background = imgBrush;
 
             imgBrush = new ImageBrush();
-            imgBrush.ImageSource = new BitmapImage(new Uri(strImgAnsw[idStrAnsw++], UriKind.Relative));
+            imgBrush.ImageSource = new BitmapImage(AssetPaths.Image(strImgAnsw[idStrAnsw++]));
             btnPA4.Background = imgBrush;
 
             imgBrush = new ImageBrush();
-            imgBrush.ImageSource = new BitmapImage(new Uri(strViewBoxAnswer, UriKind.Relative));
+            imgBrush.ImageSource = new BitmapImage(AssetPaths.Image(strViewBoxAnswer));
             viewBoxBtn1.Background = imgBrush;
             viewBoxBtn2.Background = imgBrush;
             viewBoxBtn3.Background = imgBrush;
@@ -139,9 +138,9 @@ namespace Math4Kid
 
             //Change Background
             imgBrush = new ImageBrush();
-            imgBrush.ImageSource = new BitmapImage(new Uri("/Resources/Background/Background" + rand.Next(1, 4) + ".png", UriKind.Relative));
+            imgBrush.ImageSource = new BitmapImage(AssetPaths.Image("/Resources/Background/Background" + rand.Next(1, 4) + ".png"));
             LayoutRoot.Background = imgBrush;
-            
+
         }
         public bool checkHave(int[] a, int vt, int vtAnsw, int aAnsw)
         {
@@ -176,19 +175,19 @@ namespace Math4Kid
                 countCorrect++;
                 if (countCorrect == 10)
                 {
-                    NavigationService.Navigate(new Uri("/Game_CompleteState.xaml", UriKind.Relative));
+                    NavigationService.Navigate(new Uri("/Math4Kid;component/Game_CompleteState.xaml", UriKind.Relative));
                     countCorrect = 0;
                 }
                 else
                 {
-                    soundEffect.Source = new Uri("/Assets/Sounds/Effects/correct" + rand.Next(3) + ".mp3", UriKind.Relative);
+                    soundEffect.Source = AssetPaths.Sound("/Assets/Sounds/Effects/correct" + rand.Next(3) + ".mp3");
                 }
                 Update();
                 Draw();
             }
             else
             {
-                soundEffect.Source = new Uri("/Assets/Sounds/Effects/incorrect.mp3", UriKind.Relative);
+                soundEffect.Source = AssetPaths.Sound("/Assets/Sounds/Effects/incorrect.mp3");
             }
         }
 
@@ -199,19 +198,19 @@ namespace Math4Kid
                 countCorrect++;
                 if (countCorrect == 10)
                 {
-                    NavigationService.Navigate(new Uri("/Game_CompleteState.xaml", UriKind.Relative));
+                    NavigationService.Navigate(new Uri("/Math4Kid;component/Game_CompleteState.xaml", UriKind.Relative));
                     countCorrect = 0;
                 }
                 else
                 {
-                    soundEffect.Source = new Uri("/Assets/Sounds/Effects/correct" + rand.Next(3) + ".mp3", UriKind.Relative);
+                    soundEffect.Source = AssetPaths.Sound("/Assets/Sounds/Effects/correct" + rand.Next(3) + ".mp3");
                 }
                 Update();
                 Draw();
             }
             else
             {
-                soundEffect.Source = new Uri("/Assets/Sounds/Effects/incorrect.mp3", UriKind.Relative);
+                soundEffect.Source = AssetPaths.Sound("/Assets/Sounds/Effects/incorrect.mp3");
             }
         }
 
@@ -222,19 +221,19 @@ namespace Math4Kid
                 countCorrect++;
                 if (countCorrect == 10)
                 {
-                    NavigationService.Navigate(new Uri("/Game_CompleteState.xaml", UriKind.Relative));
+                    NavigationService.Navigate(new Uri("/Math4Kid;component/Game_CompleteState.xaml", UriKind.Relative));
                     countCorrect = 0;
                 }
                 else
                 {
-                    soundEffect.Source = new Uri("/Assets/Sounds/Effects/correct" + rand.Next(3) + ".mp3", UriKind.Relative);
+                    soundEffect.Source = AssetPaths.Sound("/Assets/Sounds/Effects/correct" + rand.Next(3) + ".mp3");
                 }
                 Update();
                 Draw();
             }
             else
             {
-                soundEffect.Source = new Uri("/Assets/Sounds/Effects/incorrect.mp3", UriKind.Relative);
+                soundEffect.Source = AssetPaths.Sound("/Assets/Sounds/Effects/incorrect.mp3");
             }
         }
 
@@ -245,19 +244,19 @@ namespace Math4Kid
                 countCorrect++;
                 if (countCorrect == 10)
                 {
-                    NavigationService.Navigate(new Uri("/Game_CompleteState.xaml", UriKind.Relative));
+                    NavigationService.Navigate(new Uri("/Math4Kid;component/Game_CompleteState.xaml", UriKind.Relative));
                     countCorrect = 0;
                 }
                 else
                 {
-                    soundEffect.Source = new Uri("/Assets/Sounds/Effects/correct" + rand.Next(3) + ".mp3", UriKind.Relative);
+                    soundEffect.Source = AssetPaths.Sound("/Assets/Sounds/Effects/correct" + rand.Next(3) + ".mp3");
                 }
                 Update();
                 Draw();
             }
             else
             {
-                soundEffect.Source = new Uri("/Assets/Sounds/Effects/incorrect.mp3", UriKind.Relative);
+                soundEffect.Source = AssetPaths.Sound("/Assets/Sounds/Effects/incorrect.mp3");
             }
         }
     }

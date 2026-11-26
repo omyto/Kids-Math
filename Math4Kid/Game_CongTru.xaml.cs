@@ -1,18 +1,17 @@
-﻿using System;
+using System.Windows.Input;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
 using System.Windows.Media.Imaging;
 using System.Windows.Media;
 
 namespace Math4Kid
 {
-    public partial class Game_CongTru : PhoneApplicationPage
+    public partial class Game_CongTru : Page
     {
         private char tt;
         private int th1;
@@ -185,11 +184,11 @@ namespace Math4Kid
         private void Draw()
         {
             // Draw image question
-            imageTH1.Source = new BitmapImage(new Uri(strImageTH1, UriKind.Relative));
-            imageTH2.Source = new BitmapImage(new Uri(strImageTH2, UriKind.Relative));
-            imageTT.Source = new BitmapImage(new Uri(strImageTT, UriKind.Relative));
-            imageEQ.Source = new BitmapImage(new Uri(strImageEQ, UriKind.Relative));
-            imageKQ.Source = new BitmapImage(new Uri(strImageKQ, UriKind.Relative));
+            imageTH1.Source = new BitmapImage(AssetPaths.Image(strImageTH1));
+            imageTH2.Source = new BitmapImage(AssetPaths.Image(strImageTH2));
+            imageTT.Source = new BitmapImage(AssetPaths.Image(strImageTT));
+            imageEQ.Source = new BitmapImage(AssetPaths.Image(strImageEQ));
+            imageKQ.Source = new BitmapImage(AssetPaths.Image(strImageKQ));
 
             //Draw Item
             Image imgItem = null;
@@ -202,12 +201,12 @@ namespace Math4Kid
                 imgItem.Stretch = Stretch.Uniform;
                 if (numItem1WasDraw < numItem1)
                 {
-                    imgItem.Source = new BitmapImage(new Uri(strItem1, UriKind.Relative));
+                    imgItem.Source = new BitmapImage(AssetPaths.Image(strItem1));
                     numItem1WasDraw++;
                 }
                 else
                 {
-                    imgItem.Source = new BitmapImage(new Uri(strItem2, UriKind.Relative));
+                    imgItem.Source = new BitmapImage(AssetPaths.Image(strItem2));
                 }
                 imgItem.SetValue(Grid.ColumnProperty, i);
                 rowPanel1.Children.Add(imgItem);
@@ -219,12 +218,12 @@ namespace Math4Kid
                 imgItem.Stretch = Stretch.Uniform;
                 if (numItem1WasDraw < numItem1)
                 {
-                    imgItem.Source = new BitmapImage(new Uri(strItem1, UriKind.Relative));
+                    imgItem.Source = new BitmapImage(AssetPaths.Image(strItem1));
                     numItem1WasDraw++;
                 }
                 else
                 {
-                    imgItem.Source = new BitmapImage(new Uri(strItem2, UriKind.Relative));
+                    imgItem.Source = new BitmapImage(AssetPaths.Image(strItem2));
                 }
                 imgItem.SetValue(Grid.ColumnProperty, i);
                 rowPanel2.Children.Add(imgItem);
@@ -232,20 +231,20 @@ namespace Math4Kid
 
             //Draw answer
             ImageBrush imgBrush = new ImageBrush();
-            imgBrush.ImageSource = new BitmapImage(new Uri(strImagePA1, UriKind.Relative));
+            imgBrush.ImageSource = new BitmapImage(AssetPaths.Image(strImagePA1));
             btnPA1.Background = imgBrush;
 
             imgBrush = new ImageBrush();
-            imgBrush.ImageSource = new BitmapImage(new Uri(strImagePA2, UriKind.Relative));
+            imgBrush.ImageSource = new BitmapImage(AssetPaths.Image(strImagePA2));
             btnPA2.Background = imgBrush;
 
             imgBrush = new ImageBrush();
-            imgBrush.ImageSource = new BitmapImage(new Uri(strImagePA3, UriKind.Relative));
+            imgBrush.ImageSource = new BitmapImage(AssetPaths.Image(strImagePA3));
             btnPA3.Background = imgBrush;
 
             //Change background
             imgBrush = new ImageBrush();
-            imgBrush.ImageSource = new BitmapImage(new Uri(strImageBackground, UriKind.Relative));
+            imgBrush.ImageSource = new BitmapImage(AssetPaths.Image(strImageBackground));
             LayoutRoot.Background = imgBrush;
 
             //Background icon
@@ -256,10 +255,10 @@ namespace Math4Kid
                 bgId2 = rand.Next(3);
             } while (bgId1 == bgId2);
             imgBrush = new ImageBrush();
-            imgBrush.ImageSource = new BitmapImage(new Uri("/Resources/ButtonBackground/bane" + bgId1 + ".png", UriKind.Relative));
+            imgBrush.ImageSource = new BitmapImage(AssetPaths.Image("/Resources/ButtonBackground/bane" + bgId1 + ".png"));
             QuestionPanel.Background = imgBrush;
             imgBrush = new ImageBrush();
-            imgBrush.ImageSource = new BitmapImage(new Uri("/Resources/ButtonBackground/bane" + bgId2 + ".png", UriKind.Relative));
+            imgBrush.ImageSource = new BitmapImage(AssetPaths.Image("/Resources/ButtonBackground/bane" + bgId2 + ".png"));
             AnswerPanel.Background = imgBrush;
         }
 
@@ -270,19 +269,19 @@ namespace Math4Kid
                 countCorrect++;
                 if (countCorrect == 10)
                 {
-                    NavigationService.Navigate(new Uri("/Game_CompleteState.xaml", UriKind.Relative));
+                    NavigationService.Navigate(new Uri("/Math4Kid;component/Game_CompleteState.xaml", UriKind.Relative));
                     countCorrect = 0;
                 }
                 else
                 {
-                    soundEffect.Source = new Uri("/Assets/Sounds/Effects/correct" + rand.Next(3) + ".mp3", UriKind.Relative);
+                    soundEffect.Source = AssetPaths.Sound("/Assets/Sounds/Effects/correct" + rand.Next(3) + ".mp3");
                 }
                 Update();
                 Draw();
             }
             else
             {
-                soundEffect.Source = new Uri("/Assets/Sounds/Effects/incorrect.mp3", UriKind.Relative);
+                soundEffect.Source = AssetPaths.Sound("/Assets/Sounds/Effects/incorrect.mp3");
             }
         }
 
@@ -293,19 +292,19 @@ namespace Math4Kid
                 countCorrect++;
                 if (countCorrect == 10)
                 {
-                    NavigationService.Navigate(new Uri("/Game_CompleteState.xaml", UriKind.Relative));
+                    NavigationService.Navigate(new Uri("/Math4Kid;component/Game_CompleteState.xaml", UriKind.Relative));
                     countCorrect = 0;
                 }
                 else
                 {
-                    soundEffect.Source = new Uri("/Assets/Sounds/Effects/correct" + rand.Next(3) + ".mp3", UriKind.Relative);
+                    soundEffect.Source = AssetPaths.Sound("/Assets/Sounds/Effects/correct" + rand.Next(3) + ".mp3");
                 }
                 Update();
                 Draw();
             }
             else
             {
-                soundEffect.Source = new Uri("/Assets/Sounds/Effects/incorrect.mp3", UriKind.Relative);
+                soundEffect.Source = AssetPaths.Sound("/Assets/Sounds/Effects/incorrect.mp3");
             }
         }
 
@@ -316,19 +315,19 @@ namespace Math4Kid
                 countCorrect++;
                 if (countCorrect == 10)
                 {
-                    NavigationService.Navigate(new Uri("/Game_CompleteState.xaml", UriKind.Relative));
+                    NavigationService.Navigate(new Uri("/Math4Kid;component/Game_CompleteState.xaml", UriKind.Relative));
                     countCorrect = 0;
                 }
                 else
                 {
-                    soundEffect.Source = new Uri("/Assets/Sounds/Effects/correct" + rand.Next(3) + ".mp3", UriKind.Relative);
+                    soundEffect.Source = AssetPaths.Sound("/Assets/Sounds/Effects/correct" + rand.Next(3) + ".mp3");
                 }
                 Update();
                 Draw();
             }
             else
             {
-                soundEffect.Source = new Uri("/Assets/Sounds/Effects/incorrect.mp3", UriKind.Relative);
+                soundEffect.Source = AssetPaths.Sound("/Assets/Sounds/Effects/incorrect.mp3");
             }
         }
     }
